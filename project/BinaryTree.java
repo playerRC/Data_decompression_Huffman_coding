@@ -1,5 +1,5 @@
-import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class BinaryTree {
 
@@ -8,16 +8,19 @@ public class BinaryTree {
     
     public BinaryTree(String nom_fichier){
         this.nom_fichier = nom_fichier;
-        Frequency f = new Frequency(nom_fichier);
+        Frequency f = new Frequency(this.nom_fichier);
         ArrayList<Node> node_list = new ArrayList<Node>();
-        node_list = [Node(Integer freq, String label) for label, freq in f.listFreq()];
+
+        for (String i : f.dictFreq().keySet()) {
+            node_list.add(new Node(f.dictFreq().get(i), i));
+        }
 
         while (node_list.size() > 1){
 
-            node_list = sorted(node_list, key=lambda node: node.freq);
+            Collections.sort(node_list, Node.ComparatorFreq);
             Node left_node = node_list.remove(0);
             Node right_node = node_list.remove(0);
-            Node parent_node = new Node(left_node.getFrequence() + right_node.getFrequence());
+            Node parent_node = new Node(left_node.getFrequence() + right_node.getFrequence(), null);
             parent_node.setChildren(left_node, right_node);
             node_list.add(parent_node);
         
