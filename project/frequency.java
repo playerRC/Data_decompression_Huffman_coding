@@ -12,9 +12,9 @@ public class Frequency{
         this.nom = nom;
     }
 
-    public HashMap<String, String> listFreq() {
+    public HashMap<String, Integer> listFreq() {
         File doc = new File(this.nom);
-        HashMap<String, String> frequ = new HashMap<String, String>(); 
+        HashMap<String, Integer> frequ = new HashMap<String, Integer>(); 
         try{
           // Le fichier d'entrée
           BufferedReader obj = new BufferedReader(new FileReader(doc)); 
@@ -23,7 +23,7 @@ public class Frequency{
           String line;
           while ((line = obj.readLine()) != null){
               if (line.length() == 3){
-                  frequ.put(String.valueOf(line.charAt(0)), String.valueOf(line.charAt(2)));
+                  frequ.put(String.valueOf(line.charAt(0)), Integer.valueOf(line.charAt(2)));
               }
           }   
         }
