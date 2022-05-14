@@ -18,7 +18,7 @@ public class Frequency{
           String line;
           while ((line = obj.readLine()) != null){
               if (line.length() == 3){
-                  frequ.put(String.valueOf(line.charAt(0)), Integer.valueOf(line.charAt(2)));
+                  frequ.put(String.valueOf(line.charAt(0)), line.charAt(2) - '0');
               }
           }
           obj.close();   
