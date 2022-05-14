@@ -1,9 +1,6 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
 
-// help https://gayerie.dev/epsi-b3-java/langage_java/attributs_et_methodes.html
 
 public class Frequency{
     private String nom;
@@ -12,20 +9,19 @@ public class Frequency{
         this.nom = nom;
     }
 
-    public HashMap<String, Integer> listFreq() {
+    public HashMap<String, Integer> dictFreq() {
         File doc = new File(this.nom);
         HashMap<String, Integer> frequ = new HashMap<String, Integer>(); 
         try{
-          // Le fichier d'entrée
           BufferedReader obj = new BufferedReader(new FileReader(doc)); 
           
-          //renvoie true s'il y a une autre ligne à lire
           String line;
           while ((line = obj.readLine()) != null){
               if (line.length() == 3){
-                  frequ.put(String.valueOf(line.charAt(0)), Integer.valueOf(line.charAt(2)));
+                  frequ.put(String.valueOf(line.charAt(0)), line.charAt(2) - '0');
               }
-          }   
+          }
+          obj.close();   
         }
         catch(IOException e){
           e.printStackTrace();
