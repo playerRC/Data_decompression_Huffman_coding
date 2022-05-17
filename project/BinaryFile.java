@@ -16,11 +16,17 @@ public class BinaryFile {
             FileInputStream fis = new FileInputStream(new File(this.nom_fichier_bin));
             BufferedInputStream reader = new BufferedInputStream(fis);
         
-            // read one byte at a time
             int ch;
+            int test = 0;
+            // read one byte at a time
             while ((ch = reader.read()) != -1) {
                 String cha = Integer.toBinaryString(ch);
-                bin += cha;
+                test+=1;
+                if (test == 1){
+                    bin += cha;
+                }
+                String cha2 = String.format("%8s", cha).replace(" ", "0");
+                bin += cha2;
             }
         
             // close the reader
