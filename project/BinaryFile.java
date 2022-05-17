@@ -1,6 +1,4 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.nio.charset.StandardCharsets;
 
 public class BinaryFile {
     private String nom_fichier_bin;
