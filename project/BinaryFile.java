@@ -35,4 +35,24 @@ public class BinaryFile {
         }
         return bin;
     }
+    
+    public String test2(){
+      String bin = "";
+      File doc = new File(this.nom_fichier_bin);
+      try{
+          BufferedReader obj = new BufferedReader(new FileReader(doc)); 
+          
+          String line;
+          while ((line = obj.readLine()) != null){
+            for (int i = 0; i < line.length(); i++){
+              bin += String.valueOf(line.charAt(i));
+            }
+          }
+          obj.close();   
+        }
+        catch(IOException e){
+          e.printStackTrace();
+        }
+          return bin;
+      }
 }
