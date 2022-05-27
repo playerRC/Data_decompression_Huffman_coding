@@ -32,12 +32,4 @@ public class Node {
         this.rightChild = rightChild;
     }
 
-    public static Comparator<Node> ComparatorFreq = new Comparator<Node>() {
-      
-        @Override
-        public int compare(Node n1, Node n2) {
-            return n1.getFrequence().compareTo(n2.getFrequence());
-        }
-    };
-
 }
