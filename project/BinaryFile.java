@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.HashMap;
 
 public class BinaryFile {
   private String nom_fichier_bin;
@@ -55,17 +54,5 @@ public class BinaryFile {
       e.printStackTrace();
     }
     return bin;
-  }
-
-  public HashMap<String, String> dictio() {
-    HashMap<String, String> dictioCod = new HashMap<>();
-    dictioCod.put("!", "00");
-    dictioCod.put("b", "010");
-    dictioCod.put("n", "011");
-    dictioCod.put("j", "100");
-    dictioCod.put("u", "101");
-    dictioCod.put("r", "110");
-    dictioCod.put("o", "111");
-    return dictioCod;
   }
 }

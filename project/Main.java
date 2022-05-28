@@ -13,7 +13,6 @@ public class Main {
     Codage c = new Codage(new BinaryTree(doc + "_freq.txt"));
     BinaryFile bf = new BinaryFile(doc + "_comp.bin");
     HashMap<String, String> dictioCod = c.dictCodage(c.arbre.getRoot(), "");
-    dictioCod = bf.dictio();
     String bin = bf.traduct2();
 
     try {

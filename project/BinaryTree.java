@@ -16,11 +16,11 @@ public class BinaryTree {
         for (String i : f.keySet()) {
             node_list.add(new Node(f.get(i), i));
         }
+
         while (node_list.size() > 1) {
-            Comparator<Node> comparer = Comparator
-                    .comparing(Node::getFrequence)
-                    .thenComparing(Node::getLabel, Comparator.nullsFirst(Comparator.naturalOrder()));
-            Collections.sort(node_list, comparer);
+            Comparator<Node> compFreq = Comparator.comparing(Node::getFrequence);
+            Collections.sort(node_list, compFreq);
+
             Node left_node = node_list.remove(0);
             Node right_node = node_list.remove(0);
             Node parent_node = new Node(left_node.getFrequence() + right_node.getFrequence(), null);

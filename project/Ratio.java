@@ -29,7 +29,7 @@ public class Ratio {
     }
 
     public double nb_bits_moyen() {
-        int sm = 0;
+        double sm = 0;
         int t = Frequency.taille(this.nom);
         Codage cd = new Codage(new BinaryTree(this.nom));
         HashMap<String, String> d = cd.dictCodage(cd.arbre.getRoot(), "");
