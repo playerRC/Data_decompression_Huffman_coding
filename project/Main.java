@@ -21,7 +21,7 @@ public class Main {
       for (int i = 0; i < bin.length(); i++) {
         a += bin.charAt(i);
         for (String j : dictioCod.keySet()) {
-          if (a.compareTo(dictioCod.get(j)) == 0) {
+          if (a.equals(dictioCod.get(j)) == true) {
             myWriter.write(j);
             a = "";
           }
@@ -29,7 +29,7 @@ public class Main {
       }
       myWriter.close();
     } catch (IOException e) {
-      System.out.println("An error occurred.");
+      System.out.println("Une erreur est survenue");
       e.printStackTrace();
     }
 
@@ -37,7 +37,7 @@ public class Main {
     System.out.println("\nTaux de compression atteint: " + r.compression_ratio());
     System.out.println("Nombre moyen de bits de stockage d’un caractère: " + r.nb_bits_moyen() + "\n");
 
-    System.out.println("Texte decompressé avec succès\n");
+    System.out.println("Décompression terminée\n");
   }
 
 }
