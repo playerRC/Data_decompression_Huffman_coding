@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 
 public class BinaryTree {
 
@@ -9,11 +10,11 @@ public class BinaryTree {
 
     public BinaryTree(String nom_fichier) {
         this.nom_fichier = nom_fichier;
-        Frequency f = new Frequency(this.nom_fichier);
         ArrayList<Node> node_list = new ArrayList<Node>();
+        HashMap<String, Integer> f = Frequency.dictFreq(this.nom_fichier);
 
-        for (String i : f.dictFreq().keySet()) {
-            node_list.add(new Node(f.dictFreq().get(i), i));
+        for (String i : f.keySet()) {
+            node_list.add(new Node(f.get(i), i));
         }
         while (node_list.size() > 1) {
             Comparator<Node> comparer = Comparator

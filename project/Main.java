@@ -1,16 +1,23 @@
 import java.io.*;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
   public static void main(String args[]) {
-    BinaryTree b = new BinaryTree("exemple_freq.txt");
-    Codage c = new Codage(b);
-    BinaryFile bf = new BinaryFile("exemple_comp.bin");
-    HashMap<String, String> dictioCod = c.dictCodage(b.getRoot(), "");
+
+    System.out.println("\n----BIENVENUE DANS LE DECOMPRESSEUR DE FICHIER ----\n");
+    Scanner myObj = new Scanner(System.in); // Create a Scanner object
+    System.out.println("Quel texte voulez-vous décompresser ? ");
+    String doc = myObj.nextLine();
+
+    Codage c = new Codage(new BinaryTree(doc + "_freq.txt"));
+    BinaryFile bf = new BinaryFile(doc + "_comp.bin");
+    HashMap<String, String> dictioCod = c.dictCodage(c.arbre.getRoot(), "");
     dictioCod = bf.dictio();
     String bin = bf.traduct2();
+
     try {
-      FileWriter myWriter = new FileWriter("exemple.txt");
+      FileWriter myWriter = new FileWriter(doc + ".txt");
       String a = "";
       for (int i = 0; i < bin.length(); i++) {
         a += bin.charAt(i);
@@ -26,6 +33,12 @@ public class Main {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
+
+    Ratio r = new Ratio("exemple_freq.txt");
+    System.out.println("\nTaux de compression atteint: " + r.compression_ratio());
+    System.out.println("Nombre moyen de bits de stockage d’un caractère: " + r.nb_bits_moyen() + "\n");
+
+    System.out.println("Texte decompressé avec succès\n");
   }
 
 }
