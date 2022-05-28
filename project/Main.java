@@ -7,7 +7,8 @@ public class Main {
     Codage c = new Codage(b);
     BinaryFile bf = new BinaryFile("exemple_comp.bin");
     HashMap<String, String> dictioCod = c.dictCodage(b.getRoot(), "");
-    String bin = bf.test();
+    dictioCod = bf.dictio();
+    String bin = bf.traduct2();
     try {
       FileWriter myWriter = new FileWriter("exemple.txt");
       String a = "";
