@@ -2,6 +2,10 @@
 
 Dans le cadre de mon cursus universitaire, j'ai réalisé un projet permettant de décompresser un fichier binaire et à l'aide d'un fichier de description de l'alphabet utilisé, j'ai pu générer un fichier décompressé.
 
+Voici un exemple d'arbre de Huffman:
+
+![image](https://user-images.githubusercontent.com/93133836/170896399-b16d1dbe-a83d-4db9-a15b-ee16fdfbf013.png)
+
 # Installation et utilisation
 
 Pour pouvoir utiliser le décompresseur de fichier, il vous suffit de télecharger tout le répertoire ou de cloner le répertoire avec la commande suivante:
