@@ -25,4 +25,4 @@ Ensuite, vous devez exécuter le fichier Main.java se trouvant dans le répertoi
 # Organisation
 
 * Trello :
- * https://trello.com/b/r0seFsTi/proj631-projet-2
+  * https://trello.com/b/r0seFsTi/proj631-projet-2
